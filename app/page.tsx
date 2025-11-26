@@ -54,9 +54,9 @@ export default function Home() {
 
           <div className="flex flex-col items-center gap-0 py-10">
             <div className="flex items-center gap-0">
-              <Image src="/icon1.svg" width={1} height={70} className="w-auto h-[50px] md:h-[70px]" alt="Icon 1" />
-              <Image src="/icon2.svg" width={1} height={70} className="w-auto h-[50px] md:h-[70px]" alt="Icon 2" />
-              <Image src="/icon3.svg" width={1} height={70} className="w-auto h-[50px] md:h-[70px]" alt="Icon 3" />
+              <Image src="/icon1.svg" width={1} height={70} className="w-auto h-[140px]" alt="Icon 1" />
+              <Image src="/icon2.svg" width={1} height={70} className="w-auto h-[140px]" alt="Icon 2" />
+              <Image src="/icon3.svg" width={1} height={70} className="w-auto h-[140px]" alt="Icon 3" />
             </div>
 
             <p className="text-center font-[500] text-[14px] md:text-[16px] text-[#ADBE8F] mt-1 px-4">
