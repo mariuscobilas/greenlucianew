@@ -74,7 +74,7 @@ export default function Home() {
         </section>
 
         {/* Sponsors Section */}
-        <section className="grid grid-cols-2 sm:grid-cols-4 md:flex md:flex-row items-center justify-center md:justify-between px-4 md:px-[90px] py-5 gap-4 md:gap-6">
+        <section className="grid grid-cols-2 md:py-10 bg-[#052403] sm:grid-cols-4 md:flex md:flex-row items-center justify-center md:justify-between px-4 md:px-[90px] py-5 gap-4 md:gap-6">
           <Image src="/embassy.png" alt="Embassy logo" width={137} height={1} className="h-auto w-full max-w-[80px] md:max-w-[137px] mx-auto" />
           <Image src="/utm.png" alt="UTM logo" width={91.5} height={1} className="h-auto w-full max-w-[60px] md:max-w-[91.5px] mx-auto" />
           <Image src="/cybercor.png" alt="Cybercor logo" width={142.13} height={1} className="h-auto w-full max-w-[90px] md:max-w-[142.13px] mx-auto" />
