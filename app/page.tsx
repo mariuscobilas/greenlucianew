@@ -21,24 +21,23 @@ export default function Home() {
   const [isSuccess, setIsSuccess] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { id, value } = e.target;
-    setFormData((prev) => ({ ...prev, [id]: value }));
+    const {id, value} = e.target;
+    setFormData((prev) => ({...prev, [id]: value}));
   };
 
   const handleCheckboxChange = (checked: boolean | string) => {
-    setFormData((prev) => ({ ...prev, consent: checked === true }));
+    setFormData((prev) => ({...prev, consent: checked === true}));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.consent) {
+    if ( !formData.consent ) {
       alert("Please consent to the terms.");
       return;
     }
 
-    setIsLoading(true);
-    setIsSuccess(false); // Reset success state on new submission attempt
+    console.log('submit', formData);
 
     try {
       const response = await fetch('/api/submit', {
@@ -48,17 +47,16 @@ export default function Home() {
         },
         body: JSON.stringify(formData),
       });
+      setIsLoading(true);
+      setIsSuccess(false);
 
-      if (response.ok) {
+      if ( response.ok ) {
         // Success!
         console.log("Form data sent to Airtable successfully.");
         setIsSuccess(true);
-        // Optional: clear form data here
       } else {
-        // Handle API errors
-        const errorData = await response.json();
-        console.error("Submission failed:", errorData);
-        alert(`Registration failed: ${errorData.message}`);
+        console.error("Submission failed:");
+        alert(`Registration failed}`);
         setIsSuccess(false);
       }
     } catch (error) {
@@ -189,7 +187,7 @@ export default function Home() {
                 <div className="text-center py-10">
                   <h2 className="text-[24px] md:text-[28px] text-[#072F04] font-bold">Thank You!</h2>
                   <p className="text-[16px] md:text-[18px] text-[#072F04] opacity-70 mt-2">
-                    Your registration has been received.
+                    Your registration has been received. If you will be selected, you will get an email.
                   </p>
                 </div>
             ) : (
