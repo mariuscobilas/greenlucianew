@@ -38,12 +38,37 @@ export default function Home() {
     }
 
     setIsLoading(true);
+    setIsSuccess(false); // Reset success state on new submission attempt
 
-    setTimeout(() => {
-      console.log("Form Submitted:", formData);
+    try {
+      const response = await fetch('/api/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        // Success!
+        console.log("Form data sent to Airtable successfully.");
+        setIsSuccess(true);
+        // Optional: clear form data here
+      } else {
+        // Handle API errors
+        const errorData = await response.json();
+        console.error("Submission failed:", errorData);
+        alert(`Registration failed: ${errorData.message}`);
+        setIsSuccess(false);
+      }
+    } catch (error) {
+      // Handle network errors
+      console.error("Network or unexpected error:", error);
+      alert("An unexpected error occurred during submission.");
+      setIsSuccess(false);
+    } finally {
       setIsLoading(false);
-      setIsSuccess(true);
-    }, 2000);
+    }
   };
 
   return (
@@ -75,14 +100,14 @@ export default function Home() {
 
         {/* Sponsors Section */}
         <section className="grid grid-cols-2 md:py-10 bg-[#052403] sm:grid-cols-4 md:flex md:flex-row items-center justify-center md:justify-between px-4 md:px-[90px] py-5 gap-4 md:gap-6">
-          <Image src="/embassy.png" alt="Embassy logo" width={137} height={1} className="h-auto w-full max-w-[80px] md:max-w-[137px] mx-auto" />
-          <Image src="/utm.png" alt="UTM logo" width={91.5} height={1} className="h-auto w-full max-w-[60px] md:max-w-[91.5px] mx-auto" />
-          <Image src="/cybercor.png" alt="Cybercor logo" width={142.13} height={1} className="h-auto w-full max-w-[90px] md:max-w-[142.13px] mx-auto" />
-          <Image src="/volvo.png" alt="Volvo logo" width={193.35} height={1} className="h-auto w-full max-w-[120px] md:max-w-[193.35px] mx-auto" />
-          <Image src="/erricson.png" alt="Erricson logo" width={70.11} height={1} className="h-auto w-full max-w-[50px] md:max-w-[70.11px] mx-auto" />
-          <Image src="/synevo.png" alt="Synevo logo" width={138.7} height={1} className="h-auto w-full max-w-[90px] md:max-w-[138.7px] mx-auto" />
-          <Image src="/trox.png" alt="Trox logo" width={83.57} height={1} className="h-auto w-full max-w-[60px] md:max-w-[83.57px] mx-auto" />
-          <Image src="/dynava.png" alt="Dynava logo" width={98.22} height={1} className="h-auto w-full max-w-[70px] md:max-w-[98.22px] mx-auto" />
+          <Image src="/embassy.png" alt="Embassy logo" width={500} height={1} className="h-auto w-full max-w-[80px] md:max-w-[137px] mx-auto" />
+          <Image src="/utm.png" alt="UTM logo" width={500} height={1} className="h-auto w-full max-w-[60px] md:max-w-[91.5px] mx-auto" />
+          <Image src="/cybercor.png" alt="Cybercor logo" width={500} height={1} className="h-auto w-full max-w-[90px] md:max-w-[142.13px] mx-auto" />
+          <Image src="/volvo.png" alt="Volvo logo" width={500} height={1} className="h-auto w-full max-w-[120px] md:max-w-[193.35px] mx-auto" />
+          <Image src="/erricson.png" alt="Erricson logo" width={500} height={1} className="h-auto w-full max-w-[50px] md:max-w-[70.11px] mx-auto" />
+          <Image src="/synevo.png" alt="Synevo logo" width={500} height={1} className="h-auto w-full max-w-[90px] md:max-w-[138.7px] mx-auto" />
+          <Image src="/trox.png" alt="Trox logo" width={500} height={1} className="h-auto w-full max-w-[60px] md:max-w-[83.57px] mx-auto" />
+          <Image src="/dynava.png" alt="Dynava logo" width={500} height={1} className="h-auto w-full max-w-[70px] md:max-w-[98.22px] mx-auto" />
         </section>
 
         {/* Form Section */}
