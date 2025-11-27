@@ -75,7 +75,7 @@ export default function Home() {
       <div className="flex-col min-h-screen items-center justify-center bg-[#072F04] font-sans">
         {/* Hero Section */}
         <section className="min-h-screen w-full flex flex-col justify-between items-center py-10 px-4">
-          <Image src="/top.png" width={500} height={1} alt="Top logo part" className="w-full max-w-[500px] h-auto" />
+          <Image src="/top_logo.svg" width={700} height={1} quality={100} alt="Top logo part" className="w-full max-w-[500px] h-auto" />
 
           <div className="flex flex-col items-center gap-0 py-10">
             <div className="flex items-center gap-0">
@@ -95,19 +95,90 @@ export default function Home() {
             </Button>
           </div>
 
-          <Image src="/bottom.png" width={400} height={1} alt="Bottom logo part" className="w-full max-w-[400px] h-auto" />
+          <Image src="/bottom_logo.svg" width={600} height={1} alt="Bottom logo part" className="w-full max-w-[400px] h-auto" />
         </section>
 
         {/* Sponsors Section */}
-        <section className="grid grid-cols-2 md:py-10 bg-[#052403] sm:grid-cols-4 md:flex md:flex-row items-center justify-center md:justify-between px-4 md:px-[90px] py-5 gap-4 md:gap-6">
-          <Image src="/embassy.png" alt="Embassy logo" width={500} height={1} className="h-auto w-full max-w-[80px] md:max-w-[137px] mx-auto" />
-          <Image src="/utm.png" alt="UTM logo" width={500} height={1} className="h-auto w-full max-w-[60px] md:max-w-[91.5px] mx-auto" />
-          <Image src="/cybercor.png" alt="Cybercor logo" width={500} height={1} className="h-auto w-full max-w-[90px] md:max-w-[142.13px] mx-auto" />
-          <Image src="/volvo.png" alt="Volvo logo" width={500} height={1} className="h-auto w-full max-w-[120px] md:max-w-[193.35px] mx-auto" />
-          <Image src="/erricson.png" alt="Erricson logo" width={500} height={1} className="h-auto w-full max-w-[50px] md:max-w-[70.11px] mx-auto" />
-          <Image src="/synevo.png" alt="Synevo logo" width={500} height={1} className="h-auto w-full max-w-[90px] md:max-w-[138.7px] mx-auto" />
-          <Image src="/trox.png" alt="Trox logo" width={500} height={1} className="h-auto w-full max-w-[60px] md:max-w-[83.57px] mx-auto" />
-          <Image src="/dynava.png" alt="Dynava logo" width={500} height={1} className="h-auto w-full max-w-[70px] md:max-w-[98.22px] mx-auto" />
+        <section className="grid grid-cols-2 md:py-10 bg-[#052403] sm:grid-cols-4 md:flex md:flex-row items-center justify-center md:justify-between px-4 md:px-[90px] py-5 gap-4 md:gap-16">
+          {/* Example for the first image, apply similar changes to all others */}
+          <Image
+              src="/embassy.svg"
+              alt="Embassy logo"
+              width={700}
+              height={700}
+              quality={100}
+              className="h-auto w-full max-w-[80px] md:max-w-[274px] mx-auto"
+              sizes="(max-width: 768px) 80px, 137px"
+          />
+          <Image
+              src="/utm.svg"
+              alt="UTM logo"
+              width={700}
+              height={700}
+              quality={100}
+              className="h-auto w-full max-w-[60px] md:max-w-[91.5px] mx-auto"
+              sizes="(max-width: 768px) 60px, 91.5px"
+          />
+          <Image
+              src="/cybercor.svg"
+              alt="Cybercor logo"
+              width={700}
+              height={700}
+              quality={100}
+
+              className="h-auto w-full max-w-[90px] md:max-w-[142.13px] mx-auto"
+              sizes="(max-width: 768px) 90px, 142.13px"
+          />
+          <Image
+              src="/volvo.svg"
+              alt="Volvo logo"
+              width={700}
+              height={700}
+              quality={100}
+
+              className="h-auto w-full max-w-[120px] md:max-w-[193.35px] mx-auto"
+              sizes="(max-width: 768px) 120px, 193.35px"
+          />
+          <Image
+              src="/ericsson.svg"
+              alt="Erricson logo"
+              width={700}
+              height={700}
+              quality={100}
+
+              className="h-auto w-full max-w-[50px] md:max-w-[70.11px] mx-auto"
+              sizes="(max-width: 768px) 50px, 70.11px"
+          />
+          <Image
+              src="/synevo.svg"
+              alt="Synevo logo"
+              width={700}
+              height={700}
+              quality={100}
+
+              className="h-auto w-full max-w-[90px] md:max-w-[138.7px] mx-auto"
+              sizes="(max-width: 768px) 90px, 138.7px"
+          />
+          <Image
+              src="/trox.svg"
+              alt="Trox logo"
+              width={700}
+              height={700}
+              quality={100}
+
+              className="h-auto w-full max-w-[60px] md:max-w-[83.57px] mx-auto"
+              sizes="(max-width: 768px) 60px, 83.57px"
+          />
+          <Image
+              src="/dynava.svg"
+              alt="Dynava logo"
+              width={700}
+              height={700}
+              quality={100}
+
+              className="h-auto w-full max-w-[70px] md:max-w-[98.22px] mx-auto"
+              sizes="(max-width: 768px) 70px, 98.22px"
+          />
         </section>
 
         {/* Form Section */}
