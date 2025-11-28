@@ -5,7 +5,7 @@ import Button from "@/app/components/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import {FaLocationDot, FaPhone} from "react-icons/fa6";
+import {FaLocationDot} from "react-icons/fa6";
 import {IoMdMail} from "react-icons/io";
 
 export default function Home() {
@@ -83,6 +83,7 @@ export default function Home() {
             </div>
 
             <p className="text-center font-[500] text-[14px] md:text-[16px] text-[#ADBE8F] mt-1 px-4">
+              Embassy of Sweden’s annual Lucia Celebration at <br />
               Cybercor Institute, Technical University <br />
               168 Stefan cel Mare Boulevard <br />
               11 December 18:30–20:30
@@ -152,7 +153,7 @@ export default function Home() {
                 width={83}
                 height={100}
                 quality={100}
-                className="h-auto w-full max-w-[80px] sm:max-w-[70px] md:max-w-[70px] mx-auto"
+                className="h-auto w-full max-w-[80px] sm:max-w-[70px] md:max-w-[90px] mx-auto"
             />
             <Image
                 src="/dynava.svg"
@@ -284,16 +285,10 @@ export default function Home() {
               <div className="flex flex-row gap-2 items-center w-full">
                 <IoMdMail className="fill-[#BFCDA8] flex-shrink-0" />
                 <p className="font-medium text-[16px] md:text-[18px] text-[#BFCDA8] break-all">
-                  example@gmail.com
+                  maria-mihaela.rudenco@gov.se
                 </p>
               </div>
 
-              <div className="flex flex-row gap-2 items-center w-full">
-                <FaPhone className="fill-[#BFCDA8] flex-shrink-0" />
-                <p className="font-medium text-[16px] md:text-[18px] text-[#BFCDA8]">
-                  +373 (69) 123456
-                </p>
-              </div>
             </div>
           </div>
         </section>
